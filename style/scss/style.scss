@@ -1,0 +1,30 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	scroll-behavior: smooth;
+	border: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-overflow-scrolling: touch;
+	font-family: 'Exo 2', sans-serif;
+	&:focus {
+		outline: none;
+	}
+}
+
+html, body {
+	height: 100%;
+	overflow-x: hidden;
+}
+
+a {
+	text-decoration: none;
+}
+
+a, select, button, label, input[type=checkbox], input[type=radio] {
+	cursor: pointer;
+}
+
+input, textarea {
+	cursor: text;
+}

@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "removeComments": true,
+        "target": "es5",
+        "outFile": "../js/build.js"
+    },
+    "files": [
+    	"index.ts"
+    ]
+}
