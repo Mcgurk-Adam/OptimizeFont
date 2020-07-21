@@ -5,16 +5,19 @@
 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="preload" as="style"  href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&display=swap">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
 	<noscript>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&display=swap">
 	</noscript>
-	<link rel="stylesheet" href="/style/style.css">
 
-	<title>Optimze your Google Fonts!</title>
-	<meta name="description" content="The quickest way to optimze your Google Fonts as fast as they can go!!">
+	<link rel="stylesheet" href="/style/style.css">
+	<link rel="stylesheet" href="/style/syn.css">
+
+	<title>Optimize your Google Fonts!</title>
+	<meta name="description" content="The quickest way to optimize your Google Fonts as fast as they can go!!">
 
 </head>
 
@@ -24,12 +27,31 @@
 		
 		<section>
 			
-			<h1>Optimze your Google Fonts!</h1>
-			<p></p>
+			<h1>Speed up your website!</h1>
+			<p>It's pretty well known-web fonts are one of the things that slow web sites down the most! Well, we hope this little tool will change that.</p>
+			<p>Put your <code>&lt;link&gt;</code> tag down below, or just the URL to your Google Font, and we'll give you back the most performance optimized code that's possible right now!!</p>
+
+			<label>Link Tag or URL:
+				<input type="text" id="font" autofocus required>
+			</label>
+
+			<button type="button" id="optimizeFont">Optimize</button>
+
+			<p class="error"></p>
+
+			<div id="codeBlockContainer">
+				<pre class="ft-syntax-highlight" data-syntax="html" data-syntax-theme="one-light"><code id="finalCode"></code></pre>
+				<div class="button-container">
+					<button type="button" class="icon clipboard" id="copyButton"></button>
+					<button type="button" class="icon reset" id="resetButton"></button>
+				</div>
+			</div>
 
 		</section>
 
 	</main>
+
+	<script src="/js/build.js"></script>
 
 </body>
 </html>
