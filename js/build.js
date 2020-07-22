@@ -58,12 +58,12 @@ var GoogleFontParser = (function () {
     };
     GoogleFontParser.prototype.parseLinkTag = function () {
         var rawUrl;
-        var indexOfHref = this.fontString.indexOf('href="');
+        var indexOfHref = this.fontString.indexOf('href="') + 6;
         if (indexOfHref == -1) {
             throw "Sorry, that isn't a valid Google Fonts link tag";
         }
         var lastIndex = this.fontString.indexOf('"', indexOfHref);
-        return this.fontString.substr(indexOfHref, lastIndex);
+        return this.fontString.substr(indexOfHref, (lastIndex - indexOfHref));
     };
     GoogleFontParser.prototype.addParams = function (cleanUrl) {
         var addedUrl;
@@ -102,7 +102,7 @@ optimizeButton.addEventListener("click", function () {
         fontUrl = parser.parse();
     }
     catch (e) {
-        errorEle.innerText = "Plase fill in the font you want optimized!";
+        errorEle.innerText = e;
         optimizeButton.classList.remove("loading");
         return;
     }

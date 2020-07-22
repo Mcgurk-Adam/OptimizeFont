@@ -33,40 +33,59 @@
 
 <body>
 
-	<header id="top">
-		<a id="aboutLink" title="About this website" data-open="aboutModal">About</a>
-	</header>
-	
-	<main>
+	<div id="totalContent">
+
+		<header id="top">
+			<a id="aboutLink" title="About this website" data-open="aboutModal">About</a>
+		</header>
 		
-		<section>
+		<main>
 			
-			<h1>Optimize Your Google Fonts</h1>
-			<p>It's pretty well known - web fonts are one of the things that slow web sites down the most! This little tool will change that.</p>
-			<p>Put your <code>&lt;link&gt;</code> tag down below, or just the URL to your Google Font, and we'll give you back the most performance optimized code that's possible right now!!</p>
+			<section>
+				
+				<h1>Optimize Your Google Fonts</h1>
+				<p>It's pretty well known - web fonts are one of the things that slow web sites down the most! This little tool will change that.</p>
+				<p>Put your <code>&lt;link&gt;</code> tag down below, or just the URL to your Google Font, and we'll give you back the most performance optimized code that's possible right now!!</p>
 
-			<label for="font">Link Tag or URL:
-				<input type="text" id="font" autofocus required>
-			</label>
+				<label for="font">Link Tag or URL:
+					<input type="text" id="font" autofocus required>
+				</label>
 
-			<button type="button" id="optimizeFont">Optimize</button>
+				<button type="button" id="optimizeFont">Optimize</button>
 
-			<p class="error"></p>
+				<p class="error"></p>
 
-			<div id="codeBlockContainer">
+				<div id="codeBlockContainer">
 
-				<pre><code id="finalCode"></code></pre>
+					<pre><code id="finalCode"></code></pre>
 
-				<div class="button-container">
-					<button type="button" class="icon clipboard" id="copyButton"></button>
-					<button type="button" class="icon reset" id="resetButton"></button>
+					<div class="button-container">
+						<button type="button" class="icon clipboard" id="copyButton"></button>
+						<button type="button" class="icon reset" id="resetButton"></button>
+					</div>
+
 				</div>
 
-			</div>
+			</section>
 
-		</section>
+		</main>
 
-	</main>
+	</div>
+
+	<footer>
+		
+		<p>
+			<a href="https://twitter.com/adammmcgurk/" title="Go to Adam's Twitter" class="icon" target="_blank" rel="noopener">
+				<img src="/assets/twitter.svg" alt="Twitter" title="Twitter" style="height: 27px;">
+			</a> 
+
+			<a href="https://github.com/Mcgurk-Adam/OptimizeFont" title="Go to this repo" class="icon" target="_blank" rel="noopener">
+				<img src="/assets/github.svg" alt="Github" title="Github">
+			</a>
+
+		</p>
+
+	</footer>
 
 	<div class="modalOutside" id="aboutModal" data-modal>
 		
@@ -85,7 +104,7 @@
 				<p>But when I started to implement it, I found it a little clunky...there is no copy and paste version in what is written on CSS Wizardry...for good reason. A copy and paste version of what's there would not do the <i>information</i> any justice at all.</p>
 				<p>But what about when I just want to implement it in all of the sites I manage...well, what I've been doing is going back to the old repositories where I <i>think</i> I've implemented it, and copied the code and replaced the URL. Not the greatest solution. Something could get messed up or lost.</p>
 				<p>So I built this little tool.</p>
-				<p>It's FREE!! Please use it, please share it on Twitter, or anywhere else developers are. You using this is my happy place!</p>
+				<p>It's FREE!! Please use it, please share it on Twitter, and anywhere else developers are. You using this is my happy place!</p>
 				<p>And again, I take no responsibility for the <i>knowledge</i> that was needed to build this system of using Google Fonts. ALL the credit there goes to Harry Roberts at CSS Wizardry. I've just taken his great ideas and put together a tool that hopefully makes the web even one percent faster :)</p>
 				<p>Happy Coding!</p>
 			</div>

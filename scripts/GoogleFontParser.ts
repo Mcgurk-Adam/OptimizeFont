@@ -41,7 +41,7 @@ class GoogleFontParser {
 	parseLinkTag(): string {
 		
 		let rawUrl:string;
-		const indexOfHref:number = this.fontString.indexOf('href="');
+		const indexOfHref:number = this.fontString.indexOf('href="') + 6;
 
 		if (indexOfHref == -1) {
 			throw "Sorry, that isn't a valid Google Fonts link tag";
@@ -49,7 +49,7 @@ class GoogleFontParser {
 
 		const lastIndex:number = this.fontString.indexOf('"', indexOfHref);
 
-		return this.fontString.substr(indexOfHref, lastIndex);
+		return this.fontString.substr(indexOfHref, (lastIndex - indexOfHref));
 
 	}
 

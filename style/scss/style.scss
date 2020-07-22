@@ -18,6 +18,16 @@ html, body {
 	background-image: linear-gradient(135deg, #01337D, #47A3F3);
 }
 
+body {
+	display: flex;
+	flex-flow: column nowrap;
+	width: 100%;
+}
+
+#totalContent {
+	flex: 1 0 auto;
+}
+
 header#top {
 	height: 50px;
 	width: 100%;
@@ -41,13 +51,34 @@ header#top {
 a {
 	text-decoration: none;
 
-	&[href]:not(.button) {
+	&[href]:not(.button):not(.icon) {
 		color: #07818F;
 
 		&:hover {
 			text-decoration: underline;
 		}
-		
+
+	}
+
+	&.icon {
+
+		margin-right: 20px;
+		transition: 100ms all;
+
+		&:hover {
+
+			img {
+				opacity: 1;
+			}
+
+		}
+
+		img {
+			height: 30px;
+			width: auto;
+			opacity: .85;
+		}
+
 	}
 
 }
@@ -113,6 +144,7 @@ section {
 	}
 
 	.button-container {
+		margin-top: 20px;
 		display: flex;
 	}
 
@@ -197,6 +229,22 @@ label + button {
 	&:empty {
 		display: none;
 	}
+}
+
+footer {
+
+	width: 100%;
+	flex-shrink: 0;
+	height: 100px;
+	display: flex;
+	align-items: center;
+
+	p {
+		width: 100%;
+		text-align: center;
+		color: #E4E7EB;
+	}
+
 }
 
 @import 'modal';

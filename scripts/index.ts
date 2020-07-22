@@ -25,7 +25,7 @@ optimizeButton.addEventListener("click", () => {
 		parser = new GoogleFontParser(fontInput.value);
 		fontUrl = parser.parse();
 	} catch (e) {
-		errorEle.innerText = "Plase fill in the font you want optimized!";
+		errorEle.innerText = e;
 		optimizeButton.classList.remove("loading");
 		return;
 	}
