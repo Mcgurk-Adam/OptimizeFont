@@ -4,6 +4,7 @@ var errorEle = document.querySelector(".error");
 var codeContainer = document.querySelector("#finalCode");
 var codeBlockContainer = document.getElementById("codeBlockContainer");
 var resetButton = document.getElementById("resetButton");
+var copyButton = document.getElementById("copyButton");
 optimizeButton.addEventListener("click", function () {
     optimizeButton.classList.add("loading");
     if (!fontInput.checkValidity()) {
@@ -12,7 +13,7 @@ optimizeButton.addEventListener("click", function () {
         return;
     }
     var fontUrl = fontInput.value;
-    var fontCode = "\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<link rel=\"preload\" as=\"style\" href=\"" + fontUrl + "\">\n<link rel=\"stylesheet\" href=\"" + fontUrl + "\" media=\"print\" onload=\"this.media='all'\">\n<noscript>\n\t<link rel=\"stylesheet\" href=\"" + fontUrl + "\">\n</noscript>\n\t";
+    var fontCode = "<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<link rel=\"preload\" as=\"style\" href=\"" + fontUrl + "\">\n<link rel=\"stylesheet\" href=\"" + fontUrl + "\" media=\"print\" onload=\"this.media='all'\">\n<noscript>\n\t<link rel=\"stylesheet\" href=\"" + fontUrl + "\">\n</noscript>";
     codeContainer.innerText = fontCode;
     codeBlockContainer.style.display = "flex";
     optimizeButton.classList.remove("loading");
@@ -25,4 +26,15 @@ resetButton.addEventListener("click", function () {
     codeBlockContainer.style.display = "none";
     codeContainer.innerHTML = "";
     fontInput.focus();
+}, false);
+copyButton.addEventListener("click", function () {
+    navigator.permissions.query({ "name": "clipboard-write" }).then(function (result) {
+        if (result.state == "granted" || result.state == "prompt") {
+            navigator.clipboard.writeText(codeContainer.innerText).then(function () {
+                console.log("success!!");
+            }, function () {
+                console.log("failure");
+            });
+        }
+    });
 }, false);

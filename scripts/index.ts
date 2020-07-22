@@ -4,6 +4,7 @@ const errorEle = document.querySelector(".error") as HTMLParagraphElement;
 const codeContainer = document.querySelector("#finalCode") as HTMLPreElement;
 const codeBlockContainer = document.getElementById("codeBlockContainer") as HTMLDivElement;
 const resetButton = document.getElementById("resetButton") as HTMLButtonElement;
+const copyButton = document.getElementById("copyButton") as HTMLButtonElement;
 optimizeButton.addEventListener("click", () => {
 
 	optimizeButton.classList.add("loading");
@@ -21,14 +22,12 @@ optimizeButton.addEventListener("click", () => {
 	// add display swap if not on it
 
 	// fill in the string
-	const fontCode:string = `
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+const fontCode:string = `<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="${fontUrl}">
 <link rel="stylesheet" href="${fontUrl}" media="print" onload="this.media='all'">
 <noscript>
 	<link rel="stylesheet" href="${fontUrl}">
-</noscript>
-	`;
+</noscript>`;
 
 	codeContainer.innerText = fontCode;
 	codeBlockContainer.style.display = "flex";
@@ -49,5 +48,26 @@ resetButton.addEventListener("click", () => {
 	codeBlockContainer.style.display = "none";
 	codeContainer.innerHTML = "";
 	fontInput.focus();
+
+}, false);
+
+copyButton.addEventListener("click", () => {
+
+	navigator.permissions.query({"name": "clipboard-write"}).then(result => {
+
+		if (result.state == "granted" || result.state == "prompt") {
+
+			navigator.clipboard.writeText(codeContainer.innerText).then(() => {
+				console.log("success!!")
+			}, () => {
+				console.log("failure");
+			})
+
+		}
+
+	});
+
+/*	codeContainer.select();
+	codeContainer.setSelectionRange(0, 99999);*/
 
 }, false);
