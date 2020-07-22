@@ -121,13 +121,23 @@ resetButton.addEventListener("click", function () {
     fontInput.focus();
 }, false);
 copyButton.addEventListener("click", function () {
-    navigator.permissions.query({ "name": "clipboard-write" }).then(function (result) {
-        if (result.state == "granted" || result.state == "prompt") {
-            navigator.clipboard.writeText(codeContainer.innerText).then(function () {
-                console.log("success!!");
-            }, function () {
-                console.log("failure");
-            });
-        }
-    });
+    if ("clipboard" in navigator) {
+        navigator.permissions.query({ "name": "clipboard-write" }).then(function (result) {
+            if (result.state == "granted" || result.state == "prompt") {
+                navigator.clipboard.writeText(codeContainer.innerText).then(function () {
+                    console.log("success!!");
+                }, function () {
+                    console.log("failure");
+                });
+            }
+        });
+    }
+    else {
+        var range = document.createRange();
+        range.selectNode(codeContainer);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand("copy");
+        window.getSelection().removeAllRanges();
+    }
 }, false);

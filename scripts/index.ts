@@ -67,21 +67,31 @@ resetButton.addEventListener("click", () => {
 
 copyButton.addEventListener("click", () => {
 
-	navigator.permissions.query({"name": "clipboard-write"}).then(result => {
+	if ("clipboard" in navigator) {
 
-		if (result.state == "granted" || result.state == "prompt") {
+		navigator.permissions.query({"name": "clipboard-write"}).then(result => {
 
-			navigator.clipboard.writeText(codeContainer.innerText).then(() => {
-				console.log("success!!")
-			}, () => {
-				console.log("failure");
-			})
+			if (result.state == "granted" || result.state == "prompt") {
 
-		}
+				navigator.clipboard.writeText(codeContainer.innerText).then(() => {
+					console.log("success!!")
+				}, () => {
+					console.log("failure");
+				})
 
-	});
+			}
 
-/*	codeContainer.select();
-	codeContainer.setSelectionRange(0, 99999);*/
+		});
+
+	} else {
+
+		var range = document.createRange();
+	    range.selectNode(codeContainer);
+	    window.getSelection().removeAllRanges(); // clear current selection
+	    window.getSelection().addRange(range); // to select text
+	    document.execCommand("copy");
+	    window.getSelection().removeAllRanges();
+    
+	}
 
 }, false);
