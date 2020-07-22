@@ -1,3 +1,5 @@
+/// <reference path="Modals.ts" />
+/// <reference path="GoogleFontParser.ts" />
 const optimizeButton = document.getElementById("optimizeFont") as HTMLButtonElement;
 const fontInput = document.getElementById("font") as HTMLInputElement;
 const errorEle = document.querySelector(".error") as HTMLParagraphElement;
@@ -5,6 +7,8 @@ const codeContainer = document.querySelector("#finalCode") as HTMLPreElement;
 const codeBlockContainer = document.getElementById("codeBlockContainer") as HTMLDivElement;
 const resetButton = document.getElementById("resetButton") as HTMLButtonElement;
 const copyButton = document.getElementById("copyButton") as HTMLButtonElement;
+const mod = new Modals();
+mod.addListeners();
 optimizeButton.addEventListener("click", () => {
 
 	optimizeButton.classList.add("loading");
@@ -15,9 +19,19 @@ optimizeButton.addEventListener("click", () => {
 		return;
 	}
 
+	let parser:GoogleFontParser;
+	let fontUrl:string = fontInput.value;
+	try {
+		parser = new GoogleFontParser(fontInput.value);
+		fontUrl = parser.parse();
+	} catch (e) {
+		errorEle.innerText = "Plase fill in the font you want optimized!";
+		optimizeButton.classList.remove("loading");
+		return;
+	}
+
 	// if not google, STOP
 
-	let fontUrl:string = fontInput.value;
 
 	// add display swap if not on it
 

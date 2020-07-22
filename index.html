@@ -24,14 +24,18 @@
 	<script>
 	  window.dataLayer = window.dataLayer || [];
 	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
+	  gtag("js", new Date());
 
-	  gtag('config', 'UA-158345140-3');
+	  gtag("config", "UA-158345140-3");
 	</script>
 
 </head>
 
 <body>
+
+	<header id="top">
+		<a id="aboutLink" title="About this website" data-open="aboutModal">About</a>
+	</header>
 	
 	<main>
 		
@@ -63,6 +67,32 @@
 		</section>
 
 	</main>
+
+	<div class="modalOutside" id="aboutModal" data-modal>
+		
+		<div class="modalInside">
+			
+			<header>
+				<div class="clearfix"></div>
+				<h3 class="title">About</h3>
+				<button class="x" type="button" data-close></button>
+			</header>
+
+			<div class="body">
+				<p>This entire app was inspired by this article right here: <a href="https://csswizardry.com/2020/05/the-fastest-google-fonts/" title="CSS Wizardry Google Fonts Article" target="_blank" rel="noopener">The Fastest Google Fonts</a>.</p>
+				<p>I read this article a few weeks ago and was instanly captured by the amazing detail it went into. My entire career I've been a performance junkie, so I'm always looking for ways to shave even just <i>milliseconds</i> off my load time. So when I read the article and it showed me a way to potentially improve my website load time by almost <i>two full seconds</i>...I knew I needed to start to implement it in <i>all</i> of the web properties I manage.</p>
+				<p>(Before you continue on - please read the article. It is packed full of so many good ideas and so much research time, it's something you need to read if you care about web performance at all. Harry Roberts truly is a wizard!)</p>
+				<p>But when I started to implement it, I found it a little clunky...there is no copy and paste version in what is written on CSS Wizardry...for good reason. A copy and paste version of what's there would not do the <i>information</i> any justice at all.</p>
+				<p>But what about when I just want to implement it in all of the sites I manage...well, what I've been doing is going back to the old repositories where I <i>think</i> I've implemented it, and copied the code and replaced the URL. Not the greatest solution. Something could get messed up or lost.</p>
+				<p>So I built this little tool.</p>
+				<p>It's FREE!! Please use it, please share it on Twitter, or anywhere else developers are. You using this is my happy place!</p>
+				<p>And again, I take no responsibility for the <i>knowledge</i> that was needed to build this system of using Google Fonts. ALL the credit there goes to Harry Roberts at CSS Wizardry. I've just taken his great ideas and put together a tool that hopefully makes the web even one percent faster :)</p>
+				<p>Happy Coding!</p>
+			</div>
+
+		</div>
+
+	</div>
 
 	<script src="/js/build.js"></script>
 

@@ -5,6 +5,8 @@
         "outFile": "../js/build.js"
     },
     "files": [
+    	"Modals.ts",
+    	"GoogleFontParser.ts",
     	"index.ts"
     ]
 }

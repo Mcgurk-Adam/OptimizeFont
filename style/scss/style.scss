@@ -18,8 +18,38 @@ html, body {
 	background-image: linear-gradient(135deg, #01337D, #47A3F3);
 }
 
+header#top {
+	height: 50px;
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 0 20px;
+
+	a {
+		font-size: 18px;
+		color: #E4E7EB;
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+	}
+
+}
+
 a {
 	text-decoration: none;
+
+	&[href]:not(.button) {
+		color: #07818F;
+
+		&:hover {
+			text-decoration: underline;
+		}
+		
+	}
+
 }
 
 a, select, button, label, input[type=checkbox], input[type=radio] {
@@ -139,7 +169,7 @@ input {
 	height: 45px;
 }
 
-button {
+label + button {
 	height: 45px;
 	border-radius: 4px;
 	width: 95%;
@@ -168,3 +198,6 @@ button {
 		display: none;
 	}
 }
+
+@import 'modal';
+
