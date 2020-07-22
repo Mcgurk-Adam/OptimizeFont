@@ -122,16 +122,24 @@ section {
 	display: none;
 	flex-flow: column nowrap;
 	align-items: flex-start;
+	width: 95%;
+	max-width: 800px;
 
 	.icon {
 		height: 40px;
 		width: 40px;
 		border-radius: 4px;
-		background-color: #323F4B;
+		background-color: rgba(50, 63, 75, .8);
 		margin-right: 10px;
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: 26px;
+		border: 1px solid #1F2933;
+		transition: 100ms all;
+
+		&:active {
+			background-color: rgba(50, 63, 75, 1);
+		}
 
 		&.clipboard {
 			background-image: url(/assets/clipboard.svg);
