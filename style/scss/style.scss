@@ -223,6 +223,7 @@ label + button {
 	background-position: center;
 	background-size: 0px;
 	background-image: url(/assets/white-load-dots.svg);
+	font-weight: 600;
 
 	&.loading {
 		background-size: 35px;
