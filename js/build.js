@@ -106,6 +106,10 @@ optimizeButton.addEventListener("click", function () {
         optimizeButton.classList.remove("loading");
         return;
     }
+    gtag("event", "optimized", {
+        "event_category": "google_font",
+        "event_label": fontUrl
+    });
     var fontCode = "<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<link rel=\"preload\" as=\"style\" href=\"" + fontUrl + "\">\n<link rel=\"stylesheet\" href=\"" + fontUrl + "\" media=\"print\" onload=\"this.media='all'\">\n<noscript>\n\t<link rel=\"stylesheet\" href=\"" + fontUrl + "\">\n</noscript>";
     codeContainer.innerText = fontCode;
     codeBlockContainer.style.display = "flex";

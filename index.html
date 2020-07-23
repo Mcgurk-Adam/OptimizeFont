@@ -36,7 +36,7 @@
 	<div id="totalContent">
 
 		<header id="top">
-			<a id="aboutLink" title="About this website" data-open="aboutModal">About</a>
+			<a id="aboutLink" title="About this website" data-open="aboutModal" onclick="gtag('event', 'click', {'event_category': 'header', 'event_label': 'about'})">About</a>
 		</header>
 		
 		<main>
@@ -75,11 +75,11 @@
 	<footer>
 		
 		<p>
-			<a href="https://twitter.com/adammmcgurk/" title="Go to Adam's Twitter" class="icon" target="_blank" rel="noopener">
+			<a href="https://twitter.com/adammmcgurk/" title="Go to Adam's Twitter" class="icon" target="_blank" rel="noopener" onclick="gtag('event', 'click', {'event_category': 'footer_button', 'event_label': 'twitter'})">
 				<img src="/assets/twitter.svg" alt="Twitter" title="Twitter" style="height: 27px;">
 			</a> 
 
-			<a href="https://github.com/Mcgurk-Adam/OptimizeFont" title="Go to this repo" class="icon" target="_blank" rel="noopener">
+			<a href="https://github.com/Mcgurk-Adam/OptimizeFont" title="Go to this repo" class="icon" target="_blank" rel="noopener" onclick="gtag('event', 'click', {'event_category': 'footer_button', 'event_label': 'github'})">
 				<img src="/assets/github.svg" alt="Github" title="Github">
 			</a>
 

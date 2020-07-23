@@ -30,6 +30,12 @@ optimizeButton.addEventListener("click", () => {
 		return;
 	}
 
+	// @ts-ignore gtag does exist, I just don't want to import the primitive
+	gtag("event", "optimized", {
+		"event_category": "google_font",
+		"event_label": fontUrl
+	});
+
 	// if not google, STOP
 
 
