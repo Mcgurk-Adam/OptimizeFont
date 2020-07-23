@@ -69,7 +69,8 @@ copyButton.addEventListener("click", () => {
 
 	if ("clipboard" in navigator) {
 
-		navigator.permissions.query({"name": "clipboard-write"}).then(result => {
+		// @ts-ignore clipboard-write is most certainly a permission
+		navigator.permissions.query({"name": "clipboard-write"}).then((result:PermissionStatus) => {
 
 			if (result.state == "granted" || result.state == "prompt") {
 
@@ -91,7 +92,7 @@ copyButton.addEventListener("click", () => {
 	    window.getSelection().addRange(range); // to select text
 	    document.execCommand("copy");
 	    window.getSelection().removeAllRanges();
-    
+
 	}
 
 }, false);
