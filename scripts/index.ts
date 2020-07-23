@@ -35,13 +35,7 @@ optimizeButton.addEventListener("click", () => {
 		"event_category": "google_font",
 		"event_label": fontUrl
 	});
-
-	// if not google, STOP
-
-
-	// add display swap if not on it
-
-	// fill in the string
+	
 const fontCode:string = `<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="${fontUrl}">
 <link rel="stylesheet" href="${fontUrl}" media="print" onload="this.media='all'">
