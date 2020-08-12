@@ -1,0 +1,6 @@
+/api/*
+  Content-Type: application/json
+  Accept: application/json
+/.netlify/functions/*
+  Content-Type: application/json
+  Accept: application/json
