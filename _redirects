@@ -11,4 +11,4 @@
 /d/2/1 /?utm_source=dev.to&utm_medium=link_two&utm_campaign=article_one
 
 # API rewrites
-/api/* /.netlify/functions/:splat
+/api/* /.netlify/functions/:splat 200
