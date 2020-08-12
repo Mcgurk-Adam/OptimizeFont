@@ -59,10 +59,17 @@ exports.handler = async (ev, context) => {
 		return objectReturn;
 	}
 
+	const fontCode = `<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="${newCode}">
+<link rel="stylesheet" href="${newCode}" media="print" onload="this.media='all'">
+<noscript>
+	<link rel="stylesheet" href="${newCode}">
+</noscript>`;
+
 	objectReturn.body = JSON.stringify({
 		"success": true,
 		"message": "Successfully parsed font!",
-		"font": newCode
+		"font": fontCode
 	});
 
 	return objectReturn;
