@@ -9,3 +9,6 @@
 /d /?utm_source=dev.to
 /d/1/1 /?utm_source=dev.to&utm_medium=link_one&utm_campaign=article_one
 /d/2/1 /?utm_source=dev.to&utm_medium=link_two&utm_campaign=article_one
+
+# API rewrites
+/api/* /.netlify/functions/:splat
