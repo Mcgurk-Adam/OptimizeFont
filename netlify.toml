@@ -1,11 +1,11 @@
 [[headers]]
-  for = "/api/*"
+  for = "/api/v1"
   [headers.values]
     Content-Type = "application/json"
     Accept = "application/json"
-    
+
 [[headers]]
-  for = "/.netlify/functions/*"
+  for = "/.netlify/functions/v1"
   [headers.values]
     Content-Type = "application/json"
     Accept = "application/json"
