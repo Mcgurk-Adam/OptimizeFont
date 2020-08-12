@@ -45,11 +45,11 @@ exports.handler = async (ev, context) => {
 		return objectReturn;
 	}
 
-	let Parser;
+	let newCode;
 
 	try {
-		Parser = new GoogleFontParser(jsonBody.font);
-		const newCode = Parser.parse();
+		const Parser = new GoogleFontParser(jsonBody.font);
+		newCode = Parser.parse();
 	} catch (e) {
 		objectReturn.statusCode = 400;
 		objectReturn.body = JSON.stringify({
