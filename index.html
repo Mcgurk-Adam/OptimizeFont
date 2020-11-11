@@ -36,6 +36,7 @@
 	<div id="totalContent">
 
 		<header id="top">
+			<a id="apiLink" title="About the API" data-open="apiModal" style="margin-right: 20px;" onclick="gtag('event', 'click', {'event_category': 'header', 'event_label': 'api'})">API</a>
 			<a id="aboutLink" title="About this website" data-open="aboutModal" onclick="gtag('event', 'click', {'event_category': 'header', 'event_label': 'about'})">About</a>
 		</header>
 		
@@ -75,6 +76,7 @@
 	<footer>
 		
 		<p>
+
 			<a href="https://twitter.com/adammmcgurk/" title="Go to Adam's Twitter" class="icon" target="_blank" rel="noopener" onclick="gtag('event', 'click', {'event_category': 'footer_button', 'event_label': 'twitter'})">
 				<img src="/assets/twitter.svg" alt="Twitter" title="Twitter" style="height: 27px;">
 			</a> 
@@ -107,6 +109,27 @@
 				<p>It's FREE!! Please use it, please share it on Twitter, and anywhere else developers are. You using this is my happy place!</p>
 				<p>And again, I take no responsibility for the <i>knowledge</i> that was needed to build this system of using Google Fonts. ALL the credit there goes to Harry Roberts at CSS Wizardry. I've just taken his great ideas and put together a tool that hopefully makes the web even one percent faster :)</p>
 				<p>Happy Coding!</p>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="modalOutside" id="apiModal" data-modal>
+		
+		<div class="modalInside">
+			
+			<header>
+				<div class="clearfix"></div>
+				<h3 class="title">API</h3>
+				<button class="x" type="button" data-close></button>
+			</header>
+
+			<div class="body">
+				<p>A while ago, we built a little API for this site!</p>
+				<p>It's very easy to work with, and can plug and play into almost any build system that can make HTTP requests.</p>
+				<p>Simply make a <code>PUT</code> request to <code>https://optimizefonts.com/api/v1/</code> setting the <code>font</code> parameter to the URL to your Google Font or the link tag to your Google Font.</p>
+				<p>This API is still in beta, so if you come across any issues, please create an issue in the GitHub repo :) (link in the footer)</p>
 			</div>
 
 		</div>

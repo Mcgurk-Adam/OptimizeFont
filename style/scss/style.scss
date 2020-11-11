@@ -1,4 +1,5 @@
 * {
+
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
@@ -6,9 +7,11 @@
 	border: none;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	font-family: 'Exo 2', sans-serif;
+
 	&:focus {
 		outline: none;
 	}
+
 }
 
 html, body {
@@ -28,6 +31,7 @@ body {
 }
 
 header#top {
+
 	height: 50px;
 	width: 100%;
 	display: flex;
@@ -51,6 +55,7 @@ a {
 	text-decoration: none;
 
 	&[href]:not(.button):not(.icon) {
+
 		color: #07818F;
 
 		&:hover {
@@ -118,6 +123,7 @@ section {
 }
 
 #codeBlockContainer {
+
 	display: none;
 	flex-flow: column nowrap;
 	align-items: flex-start;
@@ -125,6 +131,7 @@ section {
 	max-width: 800px;
 
 	.icon {
+
 		height: 40px;
 		width: 40px;
 		border-radius: 4px;
@@ -158,6 +165,7 @@ section {
 }
 
 pre {
+
 	border-radius: 4px;
 	margin-top: 20px;
 	max-width: 800px;
@@ -180,9 +188,11 @@ code:not(#finalCode) {
 	padding: 2px;
 	border-radius: 4px;
 	cursor: text;
+	color: #e4e7eb;
 }
 
 label {
+
 	font-size: 16px;
 	display: flex;
 	flex-flow: column nowrap;
@@ -209,6 +219,7 @@ input {
 }
 
 label + button {
+
 	height: 45px;
 	border-radius: 4px;
 	width: 95%;
@@ -232,11 +243,14 @@ label + button {
 }
 
 .error {
+
 	margin-top: 20px;
 	color: #FFBDBD;
+
 	&:empty {
 		display: none;
 	}
+
 }
 
 footer {
@@ -256,4 +270,3 @@ footer {
 }
 
 @import 'modal';
-
