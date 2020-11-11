@@ -1,19 +1,9 @@
-/api/v1
+/api/*
   Content-Type: application/json
   Accept: application/json
   Allow: PUT
 
-/api/v1/
-  Content-Type: application/json
-  Accept: application/json
-  Allow: PUT
-
-/.netlify/functions/v1
-  Content-Type: application/json
-  Accept: application/json
-  Allow: PUT
-
-/.netlify/functions/v1/
+/.netlify/functions/*
   Content-Type: application/json
   Accept: application/json
   Allow: PUT
