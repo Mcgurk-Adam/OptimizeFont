@@ -1,9 +1,0 @@
-/api/*
-  Content-Type: application/json
-  Accept: application/json
-  Allow: PUT
-
-/.netlify/functions/*
-  Content-Type: application/json
-  Accept: application/json
-  Allow: PUT
