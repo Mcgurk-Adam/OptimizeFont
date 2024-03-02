@@ -10,6 +10,14 @@ class Modals {
 
 	addListeners(): void {
 
+		document.addEventListener("keydown", (event:KeyboardEvent) => {
+			if (event.key === "Escape") {
+				this.modals.forEach((modal: HTMLElement) => {
+					modal.classList.remove("shown");
+				});
+			}
+		});
+
 		this.openButtons.forEach((button:HTMLElement) => {
 
 			button.addEventListener("click", () => {
